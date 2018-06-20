@@ -4,7 +4,8 @@
   "description": "Express JSON API Client CRUD framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,22 @@
   "bugs": {
     "url": "https://github.com/ztolley/blubber/issues"
   },
-  "homepage": "https://github.com/ztolley/blubber#readme"
+  "homepage": "https://github.com/ztolley/blubber#readme",
+  "xo": {
+    "space": true,
+    "prettier": true,
+    "esnext": true,
+    "semicolon": false
+  },
+  "lint-staged": {
+    "*.js": [
+      "xo --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "xo": "^0.21.1"
+  }
 }
