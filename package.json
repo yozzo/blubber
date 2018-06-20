@@ -4,7 +4,8 @@
   "description": "Express JSON API Client CRUD framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "precommit": "lint-staged"
   },
   "repository": {
@@ -27,7 +28,15 @@
     "space": true,
     "prettier": true,
     "esnext": true,
-    "semicolon": false
+    "semicolon": false,
+    "globals": [
+      "beforeEach",
+      "describe",
+      "test",
+      "expect",
+      "jest",
+      "it"
+    ]
   },
   "prettier": {
     "trailingComma": "es5",
@@ -41,6 +50,7 @@
   },
   "devDependencies": {
     "husky": "^0.14.3",
+    "jest": "^23.1.0",
     "lint-staged": "^7.2.0",
     "xo": "^0.21.1"
   }
