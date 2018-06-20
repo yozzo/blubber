@@ -51,3 +51,7 @@ that eslint is disabled so as not to conflict
 `
 #### Webstore/Intellij
 tbd
+
+
+## Testing - Jest
+Tests are written in Jest and can be ran using `npm test` or `npm test:watch`
