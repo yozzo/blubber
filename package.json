@@ -1,0 +1,25 @@
+{
+  "name": "blubber",
+  "version": "0.0.1",
+  "description": "Express JSON API Client CRUD framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ztolley/blubber.git"
+  },
+  "keywords": [
+    "Express",
+    "Crud",
+    "JSON",
+    "Framework"
+  ],
+  "author": "Zac Tolley <zac@thetolleys.com> (https://github.com/ztolley)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ztolley/blubber/issues"
+  },
+  "homepage": "https://github.com/ztolley/blubber#readme"
+}
