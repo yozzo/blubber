@@ -29,6 +29,10 @@
     "esnext": true,
     "semicolon": false
   },
+  "prettier": {
+    "trailingComma": "es5",
+    "bracketSpacing": true
+  },
   "lint-staged": {
     "*.js": [
       "xo --fix",
