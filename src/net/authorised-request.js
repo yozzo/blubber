@@ -7,12 +7,12 @@ const defaultOptions = {
 }
 
 function stripScript(text) {
+  let parsedText = text
   const SCRIPT_REGEX = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi
-  while (SCRIPT_REGEX.test(text)) {
-    console.warn('Found script tag in response')
-    text = text.replace(SCRIPT_REGEX, '')
+  while (SCRIPT_REGEX.test(parsedText)) {
+    parsedText = text.replace(SCRIPT_REGEX, '')
   }
-  return text
+  return parsedText
 }
 
 function isString(s) {
