@@ -8,50 +8,33 @@ package name was available.
 
 The main components of Blubber are:
 
-* Promise based JSON API Client
-* Entity collection lists with sorting and filtering
-* Entity displays display
-* Form definition and generation
-* Form post handling
-* Transformation between API interface and form data
-* Nunjucks macros for rendering GDS style list/form layout
-* Sass library to enhance GDS styles
+- Promise based JSON API Client
+- Entity collection lists with sorting and filtering
+- Entity displays display
+- Form definition and generation
+- Form post handling
+- Transformation between API interface and form data
+- Nunjucks macros for rendering GDS style list/form layout
+- Sass library to enhance GDS styles
 
 ## Linting/Formatting
 
-As reccomended by GDS, this project uses XO to handle javascript
-linting. In this project this has been combined with prettier to
-also add an automated formatter, to keep code layout consistant
-between developers and editors.
+This project uses a combination of [Airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
+[ESLint](https://eslint.org/) rules and [Prettier](https://prettier.io/) to keep source code
+formatting consistent. The configuration for eslint tells it to ignore Airbnb's rules for code
+formatting but apply it's language rules, while leaving formatting up to Prettier.
 
-A git hook has been setup to run xo before code it commited.
+A git hook has been setup to run prettier and eslint for each file Javascript commited.
 
 ### Editor Integration
-To avoid surprises and know what your code will look lik before
-committing it is a good idea to find a plugin for your IDE that
-works with XO.
+
+To avoid surprises and know what your code will look like when it is commited it's a good idea
+to install the Prettier plugin for your IDE of choice, alongside the plugin for eslint.
 
 #### Visual studio code
 
-In the case of Visual Studio Code therea are 2 plugins available,
-though the 'official' one does not highlight lint errors in
-the editor, instead use the forked version for now, this not
-only allows you to see errors before trying to commit, but can also
-be configured to format code when you save it.
-
-* Install [Linter XO](https://marketplace.visualstudio.com/items?itemName=bryan-chen.linter-xo-2)
-* Edit your workspace settings to ensure the xo plugin and formatting is enabled and double check
-that eslint is disabled so as not to conflict
-`
-{
-  "xo.format.enable": true,
-  "editor.formatOnSave": true,
-  "eslint.enable": false
-}
-`
-#### Webstore/Intellij
-tbd
-
+For Visual Studio Code, install the [Prettier plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and the [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) plugin. You can then manually tell the editor to reformat your source or set `"editor.formatOnSave": true` in your workspace settings.
 
 ## Testing - Jest
+
 Tests are written in Jest and can be ran using `npm test` or `npm test:watch`
