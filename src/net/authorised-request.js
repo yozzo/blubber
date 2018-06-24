@@ -1,10 +1,5 @@
-const { pick, set } = require('lodash')
+const { pickBy, set } = require('lodash')
 const request = require('request-promise-native')
-
-const defaultOptions = {
-  json: true,
-  method: 'GET',
-}
 
 function stripScript(text) {
   let parsedText = text
@@ -27,17 +22,33 @@ function jsonReviver(key, value) {
   return value
 }
 
-module.exports = opts => {
-  const requestOptions = {
-    ...defaultOptions,
-    ...pick(opts, ['url', 'headers', 'method', 'qs', 'body']),
-  }
+function authorisedRequest({
+  token,
+  url,
+  headers,
+  method = 'GET',
+  qs,
+  body,
+  json = true,
+}) {
+  const requestOptions = pickBy({
+    body,
+    headers,
+    json,
+    jsonReviver,
+    method,
+    qs,
+    url,
+  })
 
-  if (opts.token) {
-    set(requestOptions, 'headers.Authorization', `Bearer ${opts.token}`)
+  if (token) {
+    set(requestOptions, 'headers.Authorization', `Bearer ${token}`)
   }
-
-  requestOptions.jsonReviver = jsonReviver
 
   return request(requestOptions)
+}
+
+module.exports = {
+  authorisedRequest,
+  _jsonReviver: jsonReviver,
 }
