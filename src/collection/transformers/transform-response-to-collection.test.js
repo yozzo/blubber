@@ -58,7 +58,7 @@ describe('transformApiResponseToCollection', () => {
     })
   })
 
-  describe('when there are no items to transform', () => {
+  describe('when there are no results to transform', () => {
     let transformed
 
     beforeEach(() => {
@@ -99,7 +99,7 @@ describe('transformApiResponseToCollection', () => {
     })
 
     it('should return transformed results', () => {
-      expect(transformed).toHaveProperty('items')
+      expect(transformed).toHaveProperty('results')
     })
 
     it('should return the result count', () => {
@@ -111,7 +111,7 @@ describe('transformApiResponseToCollection', () => {
     })
 
     it('should transform the results', () => {
-      expect(transformed).toHaveProperty('items', [
+      expect(transformed).toHaveProperty('results', [
         {
           id: '1',
           name: 'Fred Smith',
@@ -138,7 +138,7 @@ describe('transformApiResponseToCollection', () => {
     })
 
     it('should return transformed results', () => {
-      expect(transformed).toHaveProperty('items')
+      expect(transformed).toHaveProperty('results')
     })
 
     it('should return the result count', () => {
@@ -146,7 +146,7 @@ describe('transformApiResponseToCollection', () => {
     })
 
     it('should transform the results', () => {
-      expect(transformed).toHaveProperty('items', [
+      expect(transformed).toHaveProperty('results', [
         {
           id: '1',
           name: 'FRED SMITH',
@@ -173,7 +173,7 @@ describe('transformApiResponseToCollection', () => {
     })
 
     it('should transform the results, ignoring the bad transformer', () => {
-      expect(transformed).toHaveProperty('items', [
+      expect(transformed).toHaveProperty('results', [
         {
           id: '1',
           name: 'Fred Smith',
