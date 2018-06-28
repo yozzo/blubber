@@ -38,3 +38,12 @@ For Visual Studio Code, install the [Prettier plugin](https://marketplace.visual
 ## Testing - Jest
 
 Tests are written in Jest and can be ran using `npm test` or `npm test:watch`
+
+## NPM Tasks
+
+- **develop**: Runs the gallery web app in watch mode and rebuilds and restarts when any soure changes are made
+- **lint**: Parses all source javascript and styles to make sure they conform to the rules laid down by [Airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
+- **precommit**: Called from the Git pre-commit hook which in turn calls eslint and prettier to check those files and format them following the common formatting rules
+- **start**: Starts the server in normal mode
+- **test**: Executes [jest](http://jestjs.io/) to run the Javascript unit tests
+- **test:watch**: Runs [jest](http://jestjs.io/) in watch mode, this only tests changed files by default
