@@ -3,3 +3,5 @@ node_modules/
 npm*.log
 yarn-error.log
 coverage
+junit.xml
+reports/
