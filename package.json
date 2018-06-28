@@ -9,7 +9,8 @@
     "precommit": "lint-staged",
     "start": "node gallery/index.js",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:junit": "jest --ci --reporters=\"jest-junit\""
   },
   "repository": {
     "type": "git",
@@ -63,10 +64,7 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.{js,jsx}",
-      "!**/node_modules/**",
-      "!**/vendor/**",
-      "!**/coverage/**"
+      "src/**/*.js"
     ],
     "testEnvironment": "node"
   },
@@ -82,6 +80,7 @@
     "gulp-nodemon": "^2.2.1",
     "husky": "^0.14.3",
     "jest": "^23.1.0",
+    "jest-junit": "^5.1.0",
     "lint-staged": "^7.2.0",
     "prettier": "^1.13.5",
     "require-dir": "^1.0.0"
